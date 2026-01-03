@@ -1,5 +1,5 @@
-using Restaurant.Application;
-using Restaurant.Infrastructure;
+using Restaurant.Application.DependencyInjection;
+using Restaurant.Infrastructure.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
