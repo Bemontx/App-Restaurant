@@ -10,6 +10,7 @@ public class RestaurantDbContext : DbContext
     {
     }
 
+    public DbSet<Restaurant.Domain.Entities.Restaurant> Restaurants => Set<Restaurant.Domain.Entities.Restaurant>();
     public DbSet<Order> Orders => Set<Order>();
     public DbSet<OrderItem> OrderItems => Set<OrderItem>();
     public DbSet<Dish> Dishes => Set<Dish>();
