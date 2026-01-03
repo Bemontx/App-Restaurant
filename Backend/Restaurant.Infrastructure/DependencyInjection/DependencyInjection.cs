@@ -4,7 +4,7 @@ using Restaurant.Application.Interfaces.Persistence;
 using Restaurant.Infrastructure.Persistence;
 using Restaurant.Infrastructure.Repositories;
 
-namespace Restaurant.Infrastructure;
+namespace Restaurant.Infrastructure.DependencyInjection;
 
 public static class DependencyInjection
 {
@@ -13,7 +13,11 @@ public static class DependencyInjection
         string connectionString)
     {
         services.AddDbContext<RestaurantDbContext>(options =>
-            options.UseSqlite(connectionString));
+            options.UseMySql(
+                connectionString,
+                ServerVersion.AutoDetect(connectionString)
+            )
+        );
 
         services.AddScoped<IOrderRepository, OrderRepository>();
 
